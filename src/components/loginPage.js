@@ -38,7 +38,7 @@ class LoginPage extends React.Component {
       
         switch(fieldName) {
           case 'userName':
-              if(value===''){
+              if(value==''){
                 userNameValid=false
                 fieldValidationErrors.userName = userNameValid ? '' : 'should not be empty,Trying entering valid value';
                 break;
@@ -47,10 +47,10 @@ class LoginPage extends React.Component {
             fieldValidationErrors.userName = userNameValid ? '' : ' is Invalid,Trying entering valid value';
             break;
           case 'password':
-            if(value===''){
-                userNameValid=false
-                fieldValidationErrors.password = userNameValid ? '' : 'should not be empty,Trying entering valid value';
-                break;
+            if(value==''){
+                passwordValid=false
+                fieldValidationErrors.password = passwordValid ? '' : 'should not be empty,Trying entering valid value';
+                break
               }
             passwordValid = value.length >= 6;
             fieldValidationErrors.password = passwordValid ? '': ' is Too Short,Trying entering valid value';
@@ -78,7 +78,7 @@ class LoginPage extends React.Component {
                     <h2 style={{ fontWeight: '80px' }}>
                         EmailID
                     </h2>
-                    <TextField id="field1" label="Enter EmailID" style={styles} variant="outlined" type='text' name='userName' onChange={this.onEmailChange} value={this.state.userName} />
+                    <TextField id="field1" autoFocus="true" label="Enter EmailID" style={styles} variant="outlined" type='text' name='userName' onChange={this.onEmailChange} value={this.state.userName} />
                     <p></p>
                 </div>
                 <div>
@@ -104,6 +104,8 @@ class LoginPage extends React.Component {
             </form>
 
         )
+        
+        // console.log(isAuthenticated)
         return (isAuthenticated ?<Redirect to="/Dashboard" /> : loginCard)
     }
 }
