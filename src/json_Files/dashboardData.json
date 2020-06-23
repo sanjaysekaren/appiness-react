@@ -53,6 +53,13 @@
         "age": "18",
         "gender": "male",
         "email": "test8@gmail.com",
-        "phoneNo": "941346318"
+        "phoneNo": "941346318"},
+        {
+        "id": 7,
+        "name": "test7",
+        "age": "17",
+        "gender": "female",
+        "email": "test7@gmail.com",
+        "phoneNo": "9415346328"
     }
 ]
